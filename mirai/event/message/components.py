@@ -126,10 +126,10 @@ class Image(BaseMessageComponent):
         return f"[Image::{self.imageId}]"
 
     def asGroupImage(self) -> str:
-        return f"{self.imageId.upper()}"
+        return self.imageId
 
     def asFriendImage(self) -> str:
-        return f"{self.imageId.upper()}"
+        return self.imageId
 
     def asFlashImage(self) -> "FlashImage":
         return FlashImage(self.imageId, self.url)
@@ -226,10 +226,10 @@ class FlashImage(BaseMessageComponent):
         return f"[FlashImage::{self.imageId}]"
 
     def asGroupImage(self) -> str:
-        return f"{self.imageId.upper()}"
+        return self.imageId
 
     def asFriendImage(self) -> str:
-        return f"{self.imageId.upper()}"
+        return self.imageId
 
     def asNormal(self) -> Image:
         return Image(self.imageId, self.url)
